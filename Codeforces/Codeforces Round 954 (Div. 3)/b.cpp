@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+
+        int a[n][m];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                cin>>a[i][j];
+            }
+        }
+        
+        bool stabilized = true; // Assume stabilized unless proven otherwise
+    
+        while (!stabilized) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    int current_value = a[i][j];
+                
+                    // Check if current cell (i, j) can be stabilized
+                    if (i > 0 && a[i-1][j] < current_value) continue;
+                    if (i < n-1 && a[i+1][j] < current_value) continue;
+                    if (j > 0 && a[i][j-1] < current_value) continue;
+                    if (j < m-1 && a[i][j+1] < current_value) continue;
+                
+                    // If we reach here, (i, j) is the cell to stabilize
+                    a[i][j]--;
+                    stabilized = false;  // Need to check again from beginning
+                }
+            }
+        }
+        
+        // Output the stabilized matrix
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cout << a[i][j] << " ";
+            }
+            cout << "\n";
+        }
+    }
+    
+    return 0;
+}

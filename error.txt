@@ -1,0 +1,44 @@
+i 0
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 5
+j 3
+cnt 2
+ans 2
+i 1
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 5
+j 3
+cnt 3
+ans 2
+i 2
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 6
+j 3
+cnt 4
+ans 2
+i 3
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 7
+j 4
+cnt 4
+ans 2
+i 4
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 9
+j 5
+cnt 4
+ans 2
+i 5
+j 5
+a [ 3 3 4 5 7 8 ]
+rem 10
+j 5
+cnt 5
+ans 2
+
+Time: 0

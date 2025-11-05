@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> nextGreaterElements(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> pref(n);
+        for(int i=0;i<n;i++){
+            pref[i]=-1; // If it doesn't exist, return -1 for this no. position
+            for(int j=1;j<n;j++){ // j=1 since we are checking for greater element(after this number)
+                if(nums[(i+j) % n]>nums[i]){
+                    pref[i] = nums[(i+j) % n];
+                    break; //break out of the loop if the next greater no. is found
+                }
+            }
+        }
+        return pref;
+    }
+};

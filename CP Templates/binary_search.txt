@@ -1,0 +1,11 @@
+long long l=min-1, r=max+1;
+while(r-l>1){
+    long long m=(l+1)/2;
+    if(predicate(m))
+        l=m;
+    else
+        r=m;
+}
+
+// l is the last true
+// r is the first false

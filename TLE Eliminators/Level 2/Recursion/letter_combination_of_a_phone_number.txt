@@ -1,0 +1,36 @@
+class Solution {
+public:
+    void func(vector<pair<int,string>> key, string current, vector<string>& ans, string digits, int index) {
+        //base case
+        if(current.size() == digits.size()){
+            ans.push_back(current);
+            return;
+        }
+
+        //add letter
+        int digit = digits[index] - '0'; // convert the no. inside string -> int
+        string letters = key[digit-2].second;
+        for(int i=0;i<letters.size();i++){
+            func(key, current + letters[i], ans, digits, index+1);
+        }
+    }
+    
+    vector<string> letterCombinations(string digits) {
+        if(digits.empty()) return {}; // if there are no digits
+        
+        vector<pair<int,string>> key = {
+            {2, "abc"},
+            {3, "def"},
+            {4, "ghi"},
+            {5, "jkl"},
+            {6, "mno"},
+            {7, "pqrs"},
+            {8, "tuv"},
+            {9, "wxyz"}
+        };
+
+        vector<string> ans;
+        func(key, "", ans, digits, 0);
+        return ans;
+    }
+};

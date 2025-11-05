@@ -1,0 +1,14 @@
+void sieve(int n) {
+  bool primes[n + 1];
+  fill(primes, primes + n + 1, true);
+
+  primes[0] = primes[1] = false;
+
+  for (int i = 2; i * i <= n; i++) { // but if you want to print all the primes, you have to use i <= n, or else it will print only primes up to sqrt(n)
+    if (primes[i]) { // i is a prime
+      for (int j = i * i; j <= n; j += i) { // j is multiples of i
+        primes[j] = false;
+      }
+    }
+  }
+}
