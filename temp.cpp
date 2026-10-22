@@ -33,14 +33,8 @@ using mci = map<char, ll>;
 #define for0(i, n) for (int i = 0; i < n; i++)
 #define for1(i, n) for (int i = 1; i <= n; i++)
 #define loop(i,a,b) for (int i = a; i < b; i++)
-#define bloop(i,a,b) for (int i = a ; i>=b;i--)
+#define bloop(i,a,b) for (int i = a ; i >= b; i--)
 #define clz __builtin_clzll //count leading zeros
-
-//Constant Variables
-const int64_t INF = 9e18;
-const ll MOD = 1e9 + 7; //1000000007
-const int NUM = 1000030;
-const int N = 10000000;
 
 //Debugger
 #ifdef cla1rvoyant
@@ -49,7 +43,8 @@ const int N = 10000000;
 #define debug(x);
 #endif
 
-//void _print(int t) {cerr << t;}
+void _print(int t) {cerr << t;}
+void _print(int32_t t) {cerr << t;}
 void _print(ll t) {cerr << t;}
 void _print(string t) {cerr << t;}
 void _print(char t) {cerr << t;}
@@ -88,7 +83,14 @@ ll mminv(ll a, ll b) {ll arr[3]; extendgcd(a, b, arr); return arr[0];} //for non
 ll mod_div(ll a, ll b, ll m) { return mod_mul(a, mod_inv(b, m), m); }
 //int fact[100];
 //ll ncr(int n, int r) { return (r < 0 || r > n) ? 0 : mod_div(fact[n], mod_mul(fact[r], fact[n - r], m), m); }
+string decToBinary(int n) {int len = (int)(log2(n)); return bitset<64>(n).to_string().substr(64 - len - 1);}
 /*---------------------------------------------------------------------------------------------------------------------------*/
+
+//Constant Variables
+const ll INF = 9e18;
+const int64_t MOD = 1e9 + 7; //1000000007
+const int32_t NUM = 1000030;
+const int N = 10000000;
 
 ll n;
 
@@ -96,7 +98,7 @@ void solve(){
     
 }
 
-int32_t main(){
+signed main(){
 /*
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -152,11 +154,11 @@ int32_t main(){
 */
 
 /* 
-   Do you remember the complexity table?
-   Some estimations that may help
-
+    Do you remember the complexity table?
+    Some estimations that may help
+    
     N                      complexity                  Possible Algorithms & Techniques
-
+    
     10^18                  O(log(N))                   Binary & Ternary Search / Matrix Power / Cycle Tricks / Big Simulation Steps / Values ReRank
     100 000 000            O(N)                        A Linear Solution - May be a greedy algorithm
     40 000 000             O(N log N)                  Linear # calls to Binary & Ternary Search / Pre-processing & Querying / D & C
