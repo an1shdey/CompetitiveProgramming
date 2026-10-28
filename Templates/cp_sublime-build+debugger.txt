@@ -8,8 +8,7 @@
 
 PS C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits> g++ -std=c++14 stdc++.h
 
-
-
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Debugger
 #ifdef _DEBUG
@@ -18,7 +17,8 @@ PS C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits> g++ -std=c++14 stdc+
 #define debug(x);
 #endif
 
-//void _print(int t) {cerr << t;}
+void _print(int t) {cerr << t;}
+void _print(int32_t t) {cerr << t;}
 void _print(ll t) {cerr << t;}
 void _print(string t) {cerr << t;}
 void _print(char t) {cerr << t;}

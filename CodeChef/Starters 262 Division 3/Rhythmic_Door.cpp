@@ -3,8 +3,8 @@ using namespace std;
 using namespace chrono;
 
 //Type names
-#define int int64_t
-typedef long long ll;
+#define ll long long
+typedef __int128 ell;
 using ull = unsigned long long;
 using ld = long double;
 using vi = vector<ll>;
@@ -44,7 +44,6 @@ using mci = map<char, ll>;
 #endif
 
 void _print(int t) {cerr << t;}
-void _print(int32_t t) {cerr << t;}
 void _print(ll t) {cerr << t;}
 void _print(string t) {cerr << t;}
 void _print(char t) {cerr << t;}
@@ -95,7 +94,28 @@ const int N = 10000000;
 ll n;
 
 void solve(){
-    
+    ll n; cin>>n;
+    string s; cin>>s;
+
+    int cnt=1, ans=0;
+    for(ll i=1;i<n;i++){
+        if(s[i]==s[i-1]) {
+            cnt++;
+        } else cnt=1;
+
+        if(cnt==3){
+            ans++;
+            cnt=0;
+        }
+        debug(s[i])
+        debug(s[i-1])
+        debug("")
+        debug(cnt)
+        debug(ans)
+        debug(nl)
+    }
+    cout<<ans<<nl;
+    debug("\n")
 }
 
 signed main(){
@@ -154,8 +174,7 @@ signed main(){
 */
 
 /* 
-    Do you remember the complexity table?
-    Some estimations that may help
+    Estimated Complexity Table
     
     N                      complexity                  Possible Algorithms & Techniques
     
