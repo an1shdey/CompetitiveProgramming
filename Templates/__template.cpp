@@ -1,8 +1,19 @@
+/**
+ *    author:  cla1rvoyant
+ *    created: {{TIMESTAMP}}
+ * 
+ *    "Practice is the only shortcut to improve."
+**/
+
 #include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+
 using namespace std;
 using namespace chrono;
+using namespace __gnu_pbds;
 
-//Type names
+// Type names
 #define ll long long
 typedef __int128 ell;
 using ull = unsigned long long;
@@ -16,7 +27,7 @@ using mii = map<ll, ll>;
 using msi = map<string, ll>;
 using mci = map<char, ll>;
 
-//Macros
+// Macros
 #define PI 2*acos(0.0) //3.141592653589793238462
 #define sp ' '
 #define nl '\n'
@@ -33,11 +44,13 @@ using mci = map<char, ll>;
 #define for0(i, n) for (int i = 0; i < n; i++)
 #define for1(i, n) for (int i = 1; i <= n; i++)
 #define loop(i,a,b) for (int i = a; i < b; i++)
-#define bloop(i,a,b) for (int i = a ; i >= b; i--)
+#define rloop(i,a,b) for (int i = a ; i >= b; i--)
+#define trav(x, a) for (auto& x : a)
+#define bits(n) __builtin_popcount(n) //count number of set bits
 #define clz __builtin_clzll //count leading zeros
 
-//Debugger
-#ifdef cla1rvoyant
+// Debugger
+#ifdef _DEBUG
 #define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
 #else
 #define debug(x);
@@ -62,7 +75,7 @@ template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
-//Helper functions
+// Helper functions
 ll max(ll a,ll b) {if (a>b) return a; else return b;} //max{(a,b,c)} / *max_element(a.begin(),a.end())
 ll min(ll a,ll b) {if (a<b) return a; else return b;} //min{(a,b,c)} / *min_element(a.begin(),a.end())
 bool odd(ll num) {return((num&1)==1);}
@@ -81,11 +94,11 @@ void extendgcd(ll a, ll b, ll*v) {if (b == 0) {v[0] = 1; v[1] = 0; v[2] = a; ret
 ll mminv(ll a, ll b) {ll arr[3]; extendgcd(a, b, arr); return arr[0];} //for non prime b
 ll mod_div(ll a, ll b, ll m) { return mod_mul(a, mod_inv(b, m), m); }
 //int fact[100];
-//ll ncr(int n, int r) { return (r < 0 || r > n) ? 0 : mod_div(fact[n], mod_mul(fact[r], fact[n - r], m), m); }
-string decToBinary(int n) {int len = (int)(log2(n)); return bitset<64>(n).to_string().substr(64 - len - 1);}
+//ll ncr(ll n, ll r) { return (r < 0 || r > n) ? 0 : mod_div(fact[n], mod_mul(fact[r], fact[n - r], m), m); }
+string decToBinary(ll n) {ll len = (ll)(log2(n)); return bitset<64>(n).to_string().substr(64 - len - 1);}
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
-//Constant Variables
+// Constant variables
 const ll INF = 9e18;
 const int64_t MOD = 1e9 + 7; //1000000007
 const int32_t NUM = 1000030;
@@ -95,41 +108,6 @@ ll n;
 
 void solve(){
     
-}
-
-signed main(){
-/*
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-*/
-#ifdef cla1rvoyant
-    freopen("error.txt", "w", stderr);
-#endif
-
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    auto start1 = high_resolution_clock::now();
-    
-    //int i=1;
-    ll tt = 1;
-    cin >> tt; //comment this out if no testcases
-    while (tt--) {
-        //cout << "Case #" << i << ": ";
-        solve();
-        //++i;
-    }
-    
-    auto stop1 = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop1 - start1);
-
-#ifdef cla1rvoyant
-    cerr << '\n' <<"Time: " << duration . count() / 1000 << endl;
-#endif
-
-    return 0;
 }
 
 // Problem Statement
@@ -152,10 +130,10 @@ signed main(){
     
 */
 
-/* 
+/*
     Estimated Complexity Table
     
-    N                      complexity                  Possible Algorithms & Techniques
+    N                      Complexity                  Possible Algorithms & Techniques
     
     10^18                  O(log(N))                   Binary & Ternary Search / Matrix Power / Cycle Tricks / Big Simulation Steps / Values ReRank
     100 000 000            O(N)                        A Linear Solution - May be a greedy algorithm
@@ -167,4 +145,48 @@ signed main(){
     40                     O(2^N/2)                    Meet in Middle
     20                     O(2^N)                      Backtracking / Generating 2^N Subsets
     11                     O(N!)                       Factorial / Permutations / Combination Algorithm
+*/
+
+signed main(){
+/*
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+*/
+#ifdef _DEBUG
+    freopen("error.txt", "w", stderr);
+#endif
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    auto start1 = high_resolution_clock::now();
+    
+    //int i=1;
+    ll tt = 1;
+    cin >> tt; //comment this out if no testcases
+    while (tt--) {
+        //cout << "Case #" << i << ": ";
+        solve();
+        //++i;
+    }
+    
+    auto stop1 = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop1 - start1);
+
+#ifdef _DEBUG
+    cerr << '\n' <<"Time: " << duration . count() / 1000 << endl;
+#endif
+
+    return 0;
+}
+
+// Golden Rules
+/*
+    Solutions are simple.
+ 
+    Proofs are simple.
+ 
+    Implementations are simple.
 */
