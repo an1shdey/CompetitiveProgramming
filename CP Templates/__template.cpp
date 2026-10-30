@@ -1,10 +1,9 @@
 /**
  *    author:  cla1rvoyant
  *    created: {{TIMESTAMP}}
- * 
+ *
  *    "Practice is the only shortcut to improve."
 **/
-
 #include <bits/stdc++.h>
 #include<ext/pb_ds/assoc_container.hpp>
 #include<ext/pb_ds/tree_policy.hpp>
@@ -28,7 +27,7 @@ using msi = map<string, ll>;
 using mci = map<char, ll>;
 
 // Macros
-#define PI 2*acos(0.0) //3.141592653589793238462
+#define PI 2*acos(0.0) //3.1415926535897932384626
 #define sp ' '
 #define nl '\n'
 #define br cout<<'\n'
@@ -99,10 +98,11 @@ string decToBinary(ll n) {ll len = (ll)(log2(n)); return bitset<64>(n).to_string
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
 // Constant variables
-const ll INF = 9e18;
-const int64_t MOD = 1e9 + 7; //1000000007
-const int32_t NUM = 1000030;
-const int N = 10000000;
+const ll INF64 = 1e18; //1000000000000000000LL
+const int INF32 = 1e9; //1000000000 - 1 billion, safer than 2B for Floyd Warshall’s
+const int64_t MOD = 1e9 + 7; //1000000007LL
+const int32_t MOD2 = 998244353;
+const int MAXN = (int)((1e5) + 100);
 
 ll n;
 

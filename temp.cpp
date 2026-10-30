@@ -1,6 +1,6 @@
 /**
  *    author:  cla1rvoyant
- *    created: 30.10.2026 01:57:36
+ *    created: 30.10.2026 12:22:18
  *
  *    "Practice is the only shortcut to improve."
 **/
@@ -48,7 +48,6 @@ using mci = map<char, ll>;
 #define bits(n) __builtin_popcount(n) //count number of set bits
 #define clz __builtin_clzll //count leading zeros
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
 // Debugger
 #ifdef _DEBUG
 #define debug(x) cerr << #x <<" "; _print(x); cerr << endl;
@@ -74,7 +73,6 @@ template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_prin
 template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
-/*---------------------------------------------------------------------------------------------------------------------------*/
 
 // Helper functions
 ll max(ll a,ll b) {if (a>b) return a; else return b;} //max{(a,b,c)} / *max_element(a.begin(),a.end())
